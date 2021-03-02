@@ -12,9 +12,4 @@ heart_matrix = repmat(heart,10,18);
 
 for ii = 1:10
     for jj = 1:18
-        if ii > 5 && (jj == 1 || jj == 2 || jj == 3)
-            imrotate(heart_matrix(ii,jj),180);
-        end
-    end
-end
-imshow(heart_matrix);
+        if ii == 
