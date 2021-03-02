@@ -4,20 +4,22 @@
 %% This script creates heart illusion
 heart = imread('heart.jpg');
 % read in heart image
-imshow(heart);
+%imshow(heart);
 
 flipped_heart = imrotate(heart, 180);
-imshow(flipped_heart);
+%imshow(flipped_heart);
 
-%heart_matrix1 = repmat(heart,10,18); %top half of the red hearts
-% imshow(heart_matrix);
-% make hearts smaller
+top_mat = repmat(heart,6,18);
+% top half of matrix
 
-% for ii = 1:10
-%    for jj = 1:18
-%        if ii > 1525 & jj <=1020
-%            imrotate(heart_matrix(ii,jj),180);
-%        end
-%     end
-% end
-% imshow(heart_matrix);
+flip_mat = repmat(flipped_heart,4,3);
+% bottom corners of matrix
+
+mid_mat = repmat(heart,4,12);
+% bottom middle of matrix
+
+bot_mat = [flip_mat mid_mat flip_mat];
+% combine bottom sections of matrix
+heart_mat = [top_mat;bot_mat];
+% combine top and bottom of matrix
+imshow(heart_mat);
