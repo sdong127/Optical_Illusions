@@ -6,7 +6,10 @@ heart = imread('heart.jpg');
 % read in heart image
 imshow(heart);
 
-heart_matrix1 = repmat(heart,10,18);
+flipped_heart = imrotate(heart, 180);
+imshow(flipped_heart);
+
+%heart_matrix1 = repmat(heart,10,18); %top half of the red hearts
 % imshow(heart_matrix);
 % make hearts smaller
 
