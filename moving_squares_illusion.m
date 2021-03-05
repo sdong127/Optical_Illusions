@@ -40,17 +40,29 @@ end
 
 
 square1 = [lt_green];
-square1(1:2,1:2,:) = 255; %topleft
-square1(9:end, 9:end,:) = 255; %bottomright
-%bottomleft
-square1(9:end, 1:2, 1) = 255;
-square1(9:end, 1:2, 2) = 0;
-square1(9:end, 1:2, 3) = 0;
-%topright
-square1(1:2, 9:end, 1) = 255
-square1(1:2, 9:end, 2) = 0;
-square1(1:2, 9:end, 3) = 0;
+%square 1 corners
+%top left box
+square1(1:3,1:3,1) = 255;
+square1(1:3,1:3,2) = 255;
+square1(1:3,1:3,3) = 255;
+%top right box
+square1(1:3,8:end,1) = 255;
+square1(1:3,8:end,2) = 0;
+square1(1:3,8:end,3) = 0;
+%bottom left box
+square1(8:end, 1:3,1) = 255;
+square1(8:end, 1:3,2) = 0;
+square1(8:end, 1:3,3) = 0;
+%bottom right box
+square1(8:end, 8:end,1) = 255;
+square1(8:end, 8:end,2) = 255;
+square1(8:end, 8:end,3) = 255;
+%flooding the center back to light green
+square1(2:9, 2:9, 1) =0.5765;
+square1(2:9, 2:9, 2) = 0.8745;
+square1(2:9, 2:9, 3) = 0.2431;
 imshow(square1)
+
 
 % % checkerboard = [first_row];
 % % for ii = 1:16
