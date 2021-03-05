@@ -18,15 +18,36 @@ lt_green(:,:,3) = 0.2431;
 % 	93DF3E light green rgb(147, 223, 62)
 %   17x17 squares
 
-original = [lt_green];
+first_row = [lt_green];
 for ii = 1:16
     if mod(ii,2) == 0
-        original = [original lt_green];
+        first_row = [first_row lt_green];
     else
-        original = [original dark_green];
+        first_row = [first_row dark_green];
     end
 end
-imshow(original)
+% imshow(first_row)
+
+second_row = [dark_green];
+for ii = 1:16
+    if mod(ii,2) == 0
+        second_row = [second_row dark_green];
+    else
+        second_row = [second_row lt_green];
+    end
+end
+% imshow(second_row)
+
+checkerboard = [first_row];
+for ii = 1:16
+    if mod(ii,2) == 0
+        checkerboard = [checkerboard; first_row];
+    else
+        checkerboard = [checkerboard; second_row];
+    end
+end
+imshow(checkerboard)
+        
     
 %     for jj = 1:17
 %         if mod((ii+jj),2) == 0
@@ -36,5 +57,5 @@ imshow(original)
 %         end
 %     end
 % end
-imshow(my_grid)
+%imshow(my_grid)
         
