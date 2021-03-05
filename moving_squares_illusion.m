@@ -64,14 +64,6 @@ square1(2:9, 2:9, 3) = 0.2431;
 imshow(square1)
 
 
-% % checkerboard = [first_row];
-% % for ii = 1:16
-% %     if mod(ii,2) == 0
-% %         checkerboard = [checkerboard; first_row];
-% %     else
-% %         checkerboard = [checkerboard; second_row];
-% %     end
-% % end
-% % imshow(checkerboard)
+
         
         
