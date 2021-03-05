@@ -243,10 +243,10 @@ square8(2:9, 2:9, 3) = 0.5647;
 
 
 % create grid with patterned squares
-count_grid = 1;
-total_rows = 15;
+% count_grid = 1;
+% total_rows = 15;
 grids_per_row = 15;
-row_length = size(my_grid);
+% row_length = size(my_grid);
 
 % create first row of grid
 first_row = [square1];
@@ -269,8 +269,32 @@ for ii = 1:grids_per_row
         first_row = [first_row square1];
     end
 end
-% imshow(first_row)
+% imshow(first_row);
 
+sampler = [square1 square2 square3 square4 square5 square6 square7 square8];
+master_sampler = [sampler sampler sampler];
+%row1
+row = [];
+for ii = 1:15
+    if mod(ii,8) == 1
+        row = [row; master_sampler(1:10, 1:150, :)];
+    elseif mod(ii,8) == 2
+        row = [row; master_sampler(1:10, 71:220, :)];
+    elseif mod(ii,8) == 3
+        row = [row; master_sampler(1:10, 61:210, :)];
+    elseif mod(ii,8) == 4
+        row = [row; master_sampler(1:10, 51:200, :)];
+    elseif mod(ii,8) == 5
+        row = [row; master_sampler(1:10, 41:190, :)];
+    elseif mod(ii,8) == 6
+        row = [row; master_sampler(1:10, 31:180, :)];
+    elseif mod(ii,8) == 7
+        row = [row; master_sampler(1:10, 21:170, :)];
+    elseif mod(ii,8) == 0
+        row = [row; master_sampler(1:10, 11:160, :)];
+    end
+end
+imshow(row)
 
 % while row_length(1) <= total_rows
 %     if (my_grid(end) == [square1]) && (row_length(2) <= grids_per_row)
