@@ -47,6 +47,7 @@ bot_mat = [bot_ends,topmid_right,bot_mid,topmid_left,bot_ends];
 %imshow(bot_mat);
 
 heart_mat = [top_mat;bot_mat];
+<<<<<<< HEAD
 % create entire heart matrix
 imshow(heart_mat);
 
@@ -84,3 +85,21 @@ imshow(heart_mat);
 % % axis off
 % % hold on
 % % hearts = image(heart_mat,'XData',[1 6120],'YData',[1 3050]);
+=======
+% combine top and bottom of matrix
+%imshow(heart_mat);
+
+%making the green background
+my_background = zeros(3050,6120,3);
+my_background(:,:,1)=0.83137;
+my_background(:,:,2)=0.8549;
+my_background(:,:,3)=0.17647;
+%imshow(my_background);
+
+% stacking heart_mat and my_background
+green_bg = image(my_background);
+axis off
+hold on
+hearts = image(heart_mat,'XData',[1 6120],'YData',[1 3050]);
+
+>>>>>>> f1b5b32f2d7dbfbec981ed39b73fff2089aa331c
