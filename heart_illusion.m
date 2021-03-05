@@ -36,3 +36,4 @@ green_bg = image(my_background);
 axis off
 hold on
 hearts = image(heart_mat,'XData',[1 6120],'YData',[1 3050]);
+
