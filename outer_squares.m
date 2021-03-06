@@ -15,11 +15,11 @@ lt_green(:,:,3) = 0.2431;
 
 square9 = [dark_green];
 %square 9 corners, white bot left, red bot right
-%bottom left box
+%bottom left corner
 square9(81:end, 1:20,1) = 255;
 square9(81:end, 1:20,2) = 255;
 square9(81:end, 1:20,3) = 255;
-%bottom right box
+%bottom right corner
 square9(81:end, 81:end,1) = 255;
 square9(81:end, 81:end,2) = 0;
 square9(81:end, 81:end,3) = 0;
@@ -29,16 +29,31 @@ square9(7:93, 7:93, 2) = 0.7882;
 square9(7:93, 7:93, 3) = 0.5647;
 % imshow(square9)
 
+square10 = [lt_green];
+%bottom left corner
+square10(81:end, 1:20,1) = 255;
+square10(81:end, 1:20,2) = 0;
+square10(81:end, 1:20,3) = 0;
+%bottom right corner
+square10(81:end, 81:end,1) = 255;
+square10(81:end, 81:end,2) = 0;
+square10(81:end, 81:end,3) = 0;
+%flooding the center back to light green
+square10(7:93, 7:93, 1) = 0.5765;
+square10(7:93, 7:93, 2) = 0.8745;
+square10(7:93, 7:93, 3) = 0.2431;
+% imshow(square10)
+
 square11 = fliplr(square9);
 % imshow(square11)
 
-squarelt = [lt_green]; %right bot left white
+corner_square = [lt_green]; %right bot left white
 %bottom right box
-squarelt(81:end, 81:end,1) = 255;
-squarelt(81:end, 81:end,2) = 255;
-squarelt(81:end, 81:end,3) = 255;
+corner_square(81:end, 81:end,1) = 255;
+corner_square(81:end, 81:end,2) = 255;
+corner_square(81:end, 81:end,3) = 255;
 %flooding the center back to light green
-squarelt(7:93, 7:93, 1) = 0.5765;
-squarelt(7:93, 7:93, 2) = 0.8745;
-squarelt(7:93, 7:93, 3) = 0.2431;
-imshow(squarelt)
+corner_square(7:93, 7:93, 1) = 0.5765;
+corner_square(7:93, 7:93, 2) = 0.8745;
+corner_square(7:93, 7:93, 3) = 0.2431;
+% imshow(corner_square)
