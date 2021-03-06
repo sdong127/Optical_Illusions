@@ -104,7 +104,7 @@ sq13(7:93, 7:93, 3) = 0.2431;
 
 sq14 = fliplr(sq12);
 
-top_pattern = [sq9 sq10 sq11 sq12 square11 sq13 sq9 sq14];
+top_pattern = [sq9 sq10 sq11 sq12 sq11 sq13 sq9 sq14];
 top_row_full = [top_pattern top_pattern];
 top_border = top_row_full(1:100, 1:1500,:);
 % imshow(top_row)

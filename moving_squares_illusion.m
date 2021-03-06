@@ -293,7 +293,7 @@ for ii = 1:15
     elseif mod(ii,8) == 0
         row = [row; master_sampler(1:100, 101:1600, :)];
     elseif ii == 15
-        row = [row; [square5 [master_sampler(1:100, 301:1700, :)]];
+        row = [row; [square5 [master_sampler(1:100, 301:1700, :)]]];
     end
 end
 imshow(row);
