@@ -53,7 +53,7 @@ heart_mat = [top_mat;bot_mat];
 % plot heart_mat with title
 h = figure;
 imshow(heart_mat);
-t = title(sprintf('Moving Hearts Illusion\nFor Your Valentine <3'));
+t = title('Moving Hearts Illusion \n For Your Vale');
 t.FontSize = 16;
 
 % heart = imread('heart.png');

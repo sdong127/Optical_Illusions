@@ -207,5 +207,5 @@ h = figure;
 imshow(moving_squares);
 t = title(sprintf('Moving Squares Illusion'));
 descr = 'Move your head and eyes around for the full effect!';
-text(440,1725,descr,'FontSize',14);
-t.FontSize = 16;
+text(500,17,descr,'FontSize',12);
+t.FontSize = 12;
