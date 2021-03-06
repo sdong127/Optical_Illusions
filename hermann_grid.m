@@ -37,8 +37,8 @@ for ii = 1:M
         end
     end
 end
-%subplot(2,2
-%imshow(green_red);
+subplot(2,2,1);
+imshow(green_red);
 
 % change colors to red border, green squares
 red_green = bw_grid;
@@ -58,7 +58,8 @@ for ii = 1:M
         end
     end
 end
-%imshow(red_green);
+subplot(2,2,2);
+imshow(red_green);
 
 % change colors to yellow border, blue squares
 yellow_blue = bw_grid;
@@ -78,7 +79,8 @@ for ii = 1:M
         end
     end
 end
-%imshow(yellow_blue);
+subplot(2,2,3);
+imshow(yellow_blue);
 
 % change colors to blue border, yellow squares
 blue_yellow = bw_grid;
@@ -98,5 +100,6 @@ for ii = 1:M
         end
     end
 end
-%imshow(blue_yellow);
+subplot(2,2,4);
+imshow(blue_yellow);
         
