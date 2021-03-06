@@ -4,13 +4,13 @@
 %% This script creates the moving squares illusion
 
 % creating the background grid
-dark_green = zeros(10,10,3);
+dark_green = zeros(100,100,3);
 dark_green(:,:,1) = 0.3765;
 dark_green(:,:,2) = 0.7882;
 dark_green(:,:,3) = 0.5647;
 % dark green tile
 
-lt_green = zeros(10,10,3);
+lt_green = zeros(100,100,3);
 lt_green(:,:,1) = 0.5765;
 lt_green(:,:,2) = 0.8745;
 lt_green(:,:,3) = 0.2431;
@@ -38,25 +38,25 @@ lt_green(:,:,3) = 0.2431;
 square1 = [lt_green];
 %square 1 corners
 %top left box
-square1(1:3,1:3,1) = 255;
-square1(1:3,1:3,2) = 255;
-square1(1:3,1:3,3) = 255;
+square1(1:20,1:20,1) = 255;
+square1(1:20,1:20,2) = 255;
+square1(1:20,1:20,3) = 255;
 %top right box
-square1(1:3,8:end,1) = 255;
-square1(1:3,8:end,2) = 0;
-square1(1:3,8:end,3) = 0;
+square1(1:20,80:end,1) = 255;
+square1(1:20,80:end,2) = 0;
+square1(1:20,80:end,3) = 0;
 %bottom left box
-square1(8:end, 1:3,1) = 255;
-square1(8:end, 1:3,2) = 0;
-square1(8:end, 1:3,3) = 0;
+square1(80:end, 1:20,1) = 255;
+square1(80:end, 1:20,2) = 0;
+square1(80:end, 1:20,3) = 0;
 %bottom right box
-square1(8:end, 8:end,1) = 255;
-square1(8:end, 8:end,2) = 255;
-square1(8:end, 8:end,3) = 255;
+square1(80:end, 80:end,1) = 255;
+square1(80:end, 80:end,2) = 255;
+square1(80:end, 80:end,3) = 255;
 %flooding the center back to light green
-square1(2:9, 2:9, 1) = 0.5765;
-square1(2:9, 2:9, 2) = 0.8745;
-square1(2:9, 2:9, 3) = 0.2431;
+square1(7:93, 7:93, 1) = 0.5765;
+square1(7:93, 7:93, 2) = 0.8745;
+square1(7:93, 7:93, 3) = 0.2431;
 %imshow(square1)
 
 % design pattern for second type of square (white bot left, 
@@ -64,25 +64,25 @@ square1(2:9, 2:9, 3) = 0.2431;
 square2 = [dark_green];
 %square 2 corners
 %top left box
-square2(1:3,1:3,1) = 255;
-square2(1:3,1:3,2) = 0;
-square2(1:3,1:3,3) = 0;
+square2(1:20,1:20,1) = 255;
+square2(1:20,1:20,2) = 0;
+square2(1:20,1:20,3) = 0;
 %top right box
-square2(1:3,8:end,1) = 255;
-square2(1:3,8:end,2) = 0;
-square2(1:3,8:end,3) = 0;
+square2(1:20,80:end,1) = 255;
+square2(1:20,80:end,2) = 0;
+square2(1:20,80:end,3) = 0;
 %bottom left box
-square2(8:end, 1:3,1) = 255;
-square2(8:end, 1:3,2) = 255;
-square2(8:end, 1:3,3) = 255;
+square2(80:end, 1:20,1) = 255;
+square2(80:end, 1:20,2) = 255;
+square2(80:end, 1:20,3) = 255;
 %bottom right box
-square2(8:end, 8:end,1) = 255;
-square2(8:end, 8:end,2) = 0;
-square2(8:end, 8:end,3) = 0;
+square2(80:end, 80:end,1) = 255;
+square2(80:end, 80:end,2) = 0;
+square2(80:end, 80:end,3) = 0;
 %flooding the center back to dark green
-square2(2:9, 2:9, 1) = 0.3765;
-square2(2:9, 2:9, 2) = 0.7882;
-square2(2:9, 2:9, 3) = 0.5647;
+square2(7:93, 7:93, 1) = 0.3765;
+square2(7:93, 7:93, 2) = 0.7882;
+square2(7:93, 7:93, 3) = 0.5647;
 %imshow(square2)
         
 % design pattern for third type of square (white top right,
@@ -90,25 +90,25 @@ square2(2:9, 2:9, 3) = 0.5647;
 square3 = [lt_green];
 %square 3 corners
 %top left box
-square3(1:3,1:3,1) = 255;
-square3(1:3,1:3,2) = 0;
-square3(1:3,1:3,3) = 0;
+square3(1:20,1:20,1) = 255;
+square3(1:20,1:20,2) = 0;
+square3(1:20,1:20,3) = 0;
 %top right box
-square3(1:3,8:end,1) = 255;
-square3(1:3,8:end,2) = 255;
-square3(1:3,8:end,3) = 255;
+square3(1:20,80:end,1) = 255;
+square3(1:20,80:end,2) = 255;
+square3(1:20,80:end,3) = 255;
 %bottom left box
-square3(8:end, 1:3,1) = 255;
-square3(8:end, 1:3,2) = 0;
-square3(8:end, 1:3,3) = 0;
+square3(80:end, 1:20,1) = 255;
+square3(80:end, 1:20,2) = 0;
+square3(80:end, 1:20,3) = 0;
 %bottom right box
-square3(8:end, 8:end,1) = 255;
-square3(8:end, 8:end,2) = 0;
-square3(8:end, 8:end,3) = 0;
+square3(80:end, 80:end,1) = 255;
+square3(80:end, 80:end,2) = 0;
+square3(80:end, 80:end,3) = 0;
 %flooding the center back to light green
-square3(2:9, 2:9, 1) = 0.5765;
-square3(2:9, 2:9, 2) = 0.8745;
-square3(2:9, 2:9, 3) = 0.2431;
+square3(7:93, 7:93, 1) = 0.5765;
+square3(7:93, 7:93, 2) = 0.8745;
+square3(7:93, 7:93, 3) = 0.2431;
 %imshow(square3)  
 
 % design pattern for fourth type of square (white top left and bot right,
@@ -116,25 +116,25 @@ square3(2:9, 2:9, 3) = 0.2431;
 square4 = [dark_green];
 %square 4 corners
 %top left box
-square4(1:3,1:3,1) = 255;
-square4(1:3,1:3,2) = 255;
-square4(1:3,1:3,3) = 255;
+square4(1:20,1:20,1) = 255;
+square4(1:20,1:20,2) = 255;
+square4(1:20,1:20,3) = 255;
 %top right box
-square4(1:3,8:end,1) = 255;
-square4(1:3,8:end,2) = 0;
-square4(1:3,8:end,3) = 0;
+square4(1:20,80:end,1) = 255;
+square4(1:20,80:end,2) = 0;
+square4(1:20,80:end,3) = 0;
 %bottom left box
-square4(8:end, 1:3,1) = 255;
-square4(8:end, 1:3,2) = 0;
-square4(8:end, 1:3,3) = 0;
+square4(80:end, 1:20,1) = 255;
+square4(80:end, 1:20,2) = 0;
+square4(80:end, 1:20,3) = 0;
 %bottom right box
-square4(8:end, 8:end,1) = 255;
-square4(8:end, 8:end,2) = 255;
-square4(8:end, 8:end,3) = 255;
+square4(80:end, 80:end,1) = 255;
+square4(80:end, 80:end,2) = 255;
+square4(80:end, 80:end,3) = 255;
 %flooding the center back to dark green
-square4(2:9, 2:9, 1) = 0.3765;
-square4(2:9, 2:9, 2) = 0.7882;
-square4(2:9, 2:9, 3) = 0.5647;
+square4(7:93, 7:93, 1) = 0.3765;
+square4(7:93, 7:93, 2) = 0.7882;
+square4(7:93, 7:93, 3) = 0.5647;
 %imshow(square4)
 
 % design pattern for fifth type of square (white top right and bot left,
@@ -142,25 +142,25 @@ square4(2:9, 2:9, 3) = 0.5647;
 square5 = [lt_green];
 %square 5 corners
 %top left box
-square5(1:3,1:3,1) = 255;
-square5(1:3,1:3,2) = 0;
-square5(1:3,1:3,3) = 0;
+square5(1:20,1:20,1) = 255;
+square5(1:20,1:20,2) = 0;
+square5(1:20,1:20,3) = 0;
 %top right box
-square5(1:3,8:end,1) = 255;
-square5(1:3,8:end,2) = 255;
-square5(1:3,8:end,3) = 255;
+square5(1:20,80:end,1) = 255;
+square5(1:20,80:end,2) = 255;
+square5(1:20,80:end,3) = 255;
 %bottom left box
-square5(8:end, 1:3,1) = 255;
-square5(8:end, 1:3,2) = 255;
-square5(8:end, 1:3,3) = 255;
+square5(80:end, 1:20,1) = 255;
+square5(80:end, 1:20,2) = 255;
+square5(80:end, 1:20,3) = 255;
 %bottom right box
-square5(8:end, 8:end,1) = 255;
-square5(8:end, 8:end,2) = 0;
-square5(8:end, 8:end,3) = 0;
+square5(80:end, 80:end,1) = 255;
+square5(80:end, 80:end,2) = 0;
+square5(80:end, 80:end,3) = 0;
 %flooding the center back to light green
-square5(2:9, 2:9, 1) = 0.5765;
-square5(2:9, 2:9, 2) = 0.8745;
-square5(2:9, 2:9, 3) = 0.2431;
+square5(7:93, 7:93, 1) = 0.5765;
+square5(7:93, 7:93, 2) = 0.8745;
+square5(7:93, 7:93, 3) = 0.2431;
 %imshow(square5) 
 
 % design pattern for sixth type of square (red bot left, 
@@ -168,25 +168,25 @@ square5(2:9, 2:9, 3) = 0.2431;
 square6 = [dark_green];
 %square 6 corners
 %top left box
-square6(1:3,1:3,1) = 255;
-square6(1:3,1:3,2) = 255;
-square6(1:3,1:3,3) = 255;
+square6(1:20,1:20,1) = 255;
+square6(1:20,1:20,2) = 255;
+square6(1:20,1:20,3) = 255;
 %top right box
-square6(1:3,8:end,1) = 255;
-square6(1:3,8:end,2) = 255;
-square6(1:3,8:end,3) = 255;
+square6(1:20,80:end,1) = 255;
+square6(1:20,80:end,2) = 255;
+square6(1:20,80:end,3) = 255;
 %bottom left box
-square6(8:end, 1:3,1) = 255;
-square6(8:end, 1:3,2) = 0;
-square6(8:end, 1:3,3) = 0;
+square6(80:end, 1:20,1) = 255;
+square6(80:end, 1:20,2) = 0;
+square6(80:end, 1:20,3) = 0;
 %bottom right box
-square6(8:end, 8:end,1) = 255;
-square6(8:end, 8:end,2) = 255;
-square6(8:end, 8:end,3) = 255;
+square6(80:end, 80:end,1) = 255;
+square6(80:end, 80:end,2) = 255;
+square6(80:end, 80:end,3) = 255;
 %flooding the center back to dark green
-square6(2:9, 2:9, 1) = 0.3765;
-square6(2:9, 2:9, 2) = 0.7882;
-square6(2:9, 2:9, 3) = 0.5647;
+square6(7:93, 7:93, 1) = 0.3765;
+square6(7:93, 7:93, 2) = 0.7882;
+square6(7:93, 7:93, 3) = 0.5647;
 %imshow(square6)
 
 % design pattern for seventh type of square (red top right,
@@ -194,25 +194,25 @@ square6(2:9, 2:9, 3) = 0.5647;
 square7 = [lt_green];
 %square 7 corners
 %top left box
-square7(1:3,1:3,1) = 255;
-square7(1:3,1:3,2) = 255;
-square7(1:3,1:3,3) = 255;
+square7(1:20,1:20,1) = 255;
+square7(1:20,1:20,2) = 255;
+square7(1:20,1:20,3) = 255;
 %top right box
-square7(1:3,8:end,1) = 255;
-square7(1:3,8:end,2) = 0;
-square7(1:3,8:end,3) = 0;
+square7(1:20,80:end,1) = 255;
+square7(1:20,80:end,2) = 0;
+square7(1:20,80:end,3) = 0;
 %bottom left box
-square7(8:end, 1:3,1) = 255;
-square7(8:end, 1:3,2) = 255;
-square7(8:end, 1:3,3) = 255;
+square7(80:end, 1:20,1) = 255;
+square7(80:end, 1:20,2) = 255;
+square7(80:end, 1:20,3) = 255;
 %bottom right box
-square7(8:end, 8:end,1) = 255;
-square7(8:end, 8:end,2) = 255;
-square7(8:end, 8:end,3) = 255;
+square7(80:end, 80:end,1) = 255;
+square7(80:end, 80:end,2) = 255;
+square7(80:end, 80:end,3) = 255;
 %flooding the center back to light green
-square7(2:9, 2:9, 1) = 0.5765;
-square7(2:9, 2:9, 2) = 0.8745;
-square7(2:9, 2:9, 3) = 0.2431;
+square7(7:93, 7:93, 1) = 0.5765;
+square7(7:93, 7:93, 2) = 0.8745;
+square7(7:93, 7:93, 3) = 0.2431;
 %imshow(square7) 
 
 % design pattern for eighth type of square (white top right and bot left, 
@@ -220,25 +220,25 @@ square7(2:9, 2:9, 3) = 0.2431;
 square8 = [dark_green];
 %square 8 corners
 %top left box
-square8(1:3,1:3,1) = 255;
-square8(1:3,1:3,2) = 0;
-square8(1:3,1:3,3) = 0;
+square8(1:20,1:20,1) = 255;
+square8(1:20,1:20,2) = 0;
+square8(1:20,1:20,3) = 0;
 %top right box
-square8(1:3,8:end,1) = 255;
-square8(1:3,8:end,2) = 255;
-square8(1:3,8:end,3) = 255;
+square8(1:20,80:end,1) = 255;
+square8(1:20,80:end,2) = 255;
+square8(1:20,80:end,3) = 255;
 %bottom left box
-square8(8:end, 1:3,1) = 255;
-square8(8:end, 1:3,2) = 255;
-square8(8:end, 1:3,3) = 255;
+square8(80:end, 1:20,1) = 255;
+square8(80:end, 1:20,2) = 255;
+square8(80:end, 1:20,3) = 255;
 %bottom right box
-square8(8:end, 8:end,1) = 255;
-square8(8:end, 8:end,2) = 0;
-square8(8:end, 8:end,3) = 0;
+square8(80:end, 80:end,1) = 255;
+square8(80:end, 80:end,2) = 0;
+square8(80:end, 80:end,3) = 0;
 %flooding the center back to dark green
-square8(2:9, 2:9, 1) = 0.3765;
-square8(2:9, 2:9, 2) = 0.7882;
-square8(2:9, 2:9, 3) = 0.5647;
+square8(7:93, 7:93, 1) = 0.3765;
+square8(7:93, 7:93, 2) = 0.7882;
+square8(7:93, 7:93, 3) = 0.5647;
 %imshow(square8)
 
 
@@ -249,26 +249,26 @@ grids_per_row = 15;
 % row_length = size(my_grid);
 
 % create first row of grid
-first_row = [square1];
-for ii = 1:grids_per_row
-    if first_row(end) == [square1]
-        first_row = [first_row square2];
-    elseif first_row(end) == [square2]
-        first_row = [first_row square3];
-    elseif first_row(end) == [square3]
-        first_row = [first_row square4];
-    elseif first_row(end) == [square4]
-        first_row = [first_row square5];
-    elseif first_row(end) == [square5]
-        first_row = [first_row square6];
-    elseif first_row(end) == [square6]
-        first_row = [first_row square7];
-    elseif first_row(end) == [square7]
-        first_row = [first_row square8];
-    elseif first_row(end) == [square8]
-        first_row = [first_row square1];
-    end
-end
+% first_row = [square1];
+% for ii = 1:grids_per_row
+%     if first_row(end) == [square1]
+%         first_row = [first_row square2];
+%     elseif first_row(end) == [square2]
+%         first_row = [first_row square3];
+%     elseif first_row(end) == [square3]
+%         first_row = [first_row square4];
+%     elseif first_row(end) == [square4]
+%         first_row = [first_row square5];
+%     elseif first_row(end) == [square5]
+%         first_row = [first_row square6];
+%     elseif first_row(end) == [square6]
+%         first_row = [first_row square7];
+%     elseif first_row(end) == [square7]
+%         first_row = [first_row square8];
+%     elseif first_row(end) == [square8]
+%         first_row = [first_row square1];
+%     end
+% end
 % imshow(first_row);
 
 sampler = [square1 square2 square3 square4 square5 square6 square7 square8];
@@ -277,25 +277,29 @@ master_sampler = [sampler sampler sampler];
 row = [];
 for ii = 1:15
     if mod(ii,8) == 1
-        row = [row; master_sampler(1:10, 1:150, :)];
+        row = [row; master_sampler(1:100, 1:1500, :)];
     elseif mod(ii,8) == 2
-        row = [row; master_sampler(1:10, 71:220, :)];
+        row = [row; master_sampler(1:100, 701:2200, :)];
     elseif mod(ii,8) == 3
-        row = [row; master_sampler(1:10, 61:210, :)];
+        row = [row; master_sampler(1:100, 601:2100, :)];
     elseif mod(ii,8) == 4
-        row = [row; master_sampler(1:10, 51:200, :)];
+        row = [row; master_sampler(1:100, 501:2000, :)];
     elseif mod(ii,8) == 5
-        row = [row; master_sampler(1:10, 41:190, :)];
+        row = [row; master_sampler(1:100, 401:1900, :)];
     elseif mod(ii,8) == 6
-        row = [row; master_sampler(1:10, 31:180, :)];
+        row = [row; master_sampler(1:100, 301:1800, :)];
     elseif mod(ii,8) == 7
-        row = [row; master_sampler(1:10, 21:170, :)];
+        row = [row; master_sampler(1:100, 201:1700, :)];
     elseif mod(ii,8) == 0
-        row = [row; master_sampler(1:10, 11:160, :)];
+        row = [row; master_sampler(1:100, 101:1600, :)];
     end
 end
-imshow(row)
+imshow(row);
 
+
+
+% my_row = imresize(row, [300, 300]);
+% imshow(my_row)
 % while row_length(1) <= total_rows
 %     if (my_grid(end) == [square1]) && (row_length(2) <= grids_per_row)
 %         my_grid(count_grid) = ;
