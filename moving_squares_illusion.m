@@ -288,99 +288,15 @@ for ii = 1:15
         row = [row; master_sampler(1:100, 401:1900, :)];
     elseif mod(ii,8) == 6
         row = [row; master_sampler(1:100, 301:1800, :)];
-    elseif mod(ii,8) == 7
+    elseif ii == 7
         row = [row; master_sampler(1:100, 201:1700, :)];
     elseif mod(ii,8) == 0
         row = [row; master_sampler(1:100, 101:1600, :)];
+    elseif ii == 15
+        row = [row; [square5 [master_sampler(1:100, 301:1700, :)]];
     end
 end
 imshow(row);
 
 
-
-% my_row = imresize(row, [300, 300]);
-% imshow(my_row)
-% while row_length(1) <= total_rows
-%     if (my_grid(end) == [square1]) && (row_length(2) <= grids_per_row)
-%         my_grid(count_grid) = ;
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square2]) && (row_length(2) <= grids_per_row)
-%         my_grid = [my_grid square3];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square3]) && (row_length(2) <= grids_per_row)
-%         my_grid = [my_grid square4];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square4]) && (row_length(2) <= grids_per_row)
-%         my_grid = [my_grid square5];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square5]) && (row_length(2) <= grids_per_row)
-%         my_grid = [my_grid square6];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square6]) && (row_length(2) <= grids_per_row)
-%         my_grid = [my_grid square7];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square7]) && (row_length(2) <= grids_per_row)
-%         my_grid = [my_grid square8];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square8]) && (row_length(2) <= grids_per_row)
-%         my_grid = [my_grid square1];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square1]) && (row_length(2) > grids_per_row)
-%         my_grid = [my_grid;square2]; %% fix so that new row starts
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square2]) && (row_length(2) > grids_per_row)
-%         my_grid = [my_grid square3];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square3]) && (row_length(2) > grids_per_row)
-%         my_grid = [my_grid square4];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square4]) && (row_length(2) > grids_per_row)
-%         my_grid = [my_grid square5];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square5]) && (row_length(2) > grids_per_row)
-%         my_grid = [my_grid square6];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square6]) && (row_length(2) > grids_per_row)
-%         my_grid = [my_grid square7];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square7]) && (row_length(2) > grids_per_row)
-%         my_grid = [my_grid square8];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-%     elseif (my_grid(end) == [square8]) && (row_length(2) > grids_per_row)
-%         my_grid = [my_grid square1];
-%         row_length = row_length + 1;
-%         count_grid = count_grid + 1;
-%         break
-        
-        
     
