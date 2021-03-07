@@ -3,6 +3,8 @@
 %% by Haley Seo and Shirley Dong
 %% This script contains the squares for the outer border of moving squares
 
+%% Haley - driver, Shirley - observer
+
 % dark green tile
 dark_green = zeros(100,100,3);
 dark_green(:,:,1) = 0.3765;

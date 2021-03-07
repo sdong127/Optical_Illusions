@@ -3,6 +3,8 @@
 %% by Haley Seo and Shirley Dong
 %% This script creates heart illusion
 
+%% Shirley - driver, Haley - observer
+
 white_top = imread('topleft&right.png');
 % read in image for top left and right portions of matrix
 top_ends = repmat(white_top,5,3);

@@ -5,17 +5,19 @@
 
 %%%%% creating the grid %%%%%
 
+
+%% Haley - driver, Shirley - observer
+% dark green tile
 dark_green = zeros(100,100,3);
 dark_green(:,:,1) = 0.3765;
 dark_green(:,:,2) = 0.7882;
 dark_green(:,:,3) = 0.5647;
-% dark green tile
 
+% light green tile
 lt_green = zeros(100,100,3);
 lt_green(:,:,1) = 0.5765;
 lt_green(:,:,2) = 0.8745;
 lt_green(:,:,3) = 0.2431;
-% light green tile
 
 % colors
 % 60c990 dark green rgb(96, 201, 144)
@@ -34,6 +36,7 @@ lt_green(:,:,3) = 0.2431;
 % % imshow(second_row)
 
 
+%%
 % design pattern for first type of square (white top left and bot right,
 % red bot left and top right)
 square1 = [lt_green];
@@ -245,8 +248,7 @@ square8(7:93, 7:93, 3) = 0.5647;
 
 % create grid with patterned squares
 % count_grid = 1;
-% total_rows = 15;
-grids_per_row = 15;
+% grids_per_row = 15;
 % row_length = size(my_grid);
 
 % create first row of grid
@@ -275,26 +277,37 @@ grids_per_row = 15;
 sampler = [square1 square2 square3 square4 square5 square6 square7 square8];
 master_sampler = [sampler sampler sampler];
 % create 'master' row to sample different grids from
+total_rows = 15;
 row = [];
 % initiate matrix
-for ii = 1:grids_per_row
+for ii = 1:total_rows
+% loop through number of rows
     if mod(ii,8) == 1
+    % check if current row should be square1 -> square8
         row = [row; master_sampler(1:100, 1:1500, :)];
     elseif mod(ii,8) == 2
+    % check if current row should be square8 -> square7
         row = [row; master_sampler(1:100, 701:2200, :)];
     elseif mod(ii,8) == 3
+    % check if current row should be square7 -> square6
         row = [row; master_sampler(1:100, 601:2100, :)];
     elseif mod(ii,8) == 4
+    % check if current row should be square6 -> square5
         row = [row; master_sampler(1:100, 501:2000, :)];
     elseif mod(ii,8) == 5
+    % check if current row should be square5 -> square4
         row = [row; master_sampler(1:100, 401:1900, :)];
     elseif mod(ii,8) == 6
+    % check if current row should be square4 -> square3
         row = [row; master_sampler(1:100, 301:1800, :)];
     elseif ii == 7
+    % check if current row should be square3 -> square2
         row = [row; master_sampler(1:100, 201:1700, :)];
     elseif mod(ii,8) == 0
+    % check if current row should be square2 -> square1
         row = [row; master_sampler(1:100, 101:1600, :)];
     elseif ii == 15
+    % check if current row is the last row
         row = [row; [square5 [master_sampler(1:100, 301:1700, :)]]];
     end
 end

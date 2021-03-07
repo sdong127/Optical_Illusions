@@ -3,6 +3,8 @@
 %% by Haley Seo and Shirley Dong
 %% This script creates Hermann Grid illusion
 
+%% Shirley - driver, Haley - observer
+
 % create row for grid
 row = [zeros(1,1,3) ones(1,10,3) zeros(1,1,3)];
 % imshow(row);

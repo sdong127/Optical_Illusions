@@ -4,6 +4,7 @@
 %% This script creates the moving squares illusion
 
 %%%%% creating the grid %%%%%
+%% Haley - driver, Shirley - observer
 
 % dark green tile
 dark_green = zeros(100,100,3);
@@ -34,6 +35,7 @@ lt_green(:,:,3) = 0.2431;
 % % imshow(second_row)
 
 
+%% Haley - started making the squares, Shirley - finished the squares
 % design pattern for first type of square (white top left and bot right,
 % red bot left and top right)
 square1 = [lt_green];
@@ -271,6 +273,8 @@ square8(7:93, 7:93, 3) = 0.5647;
 % end
 % imshow(first_row);
 
+
+%% Haley - driver, Shirley - observer
 sampler = [square1 square2 square3 square4 square5 square6 square7 square8];
 master_sampler = [sampler sampler sampler];
 % create 'master' row to sample different grids from
