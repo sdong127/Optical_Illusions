@@ -58,7 +58,7 @@ imshow(green_red);
 red_green = bw_grid;
 for ii = 1:M
     for jj = 1:N
-        rgb = reshape(green_red(ii,jj,:),3,1);
+        rgb = reshape(red_green(ii,jj,:),3,1);
         if rgb == zeros(3,1)
         % check if RGB values at ii,jj are 0s
             red_green(ii,jj,:) = cat(3,255,0,0);
@@ -79,7 +79,7 @@ imshow(red_green);
 yellow_blue = bw_grid;
 for ii = 1:M
     for jj = 1:N
-        rgb = reshape(green_red(ii,jj,:),3,1);
+        rgb = reshape(yellow_blue(ii,jj,:),3,1);
         if rgb == zeros(3,1)
         % check if RGB values at ii,jj are 0s
             yellow_blue(ii,jj,:) = cat(3,255,255,0);
