@@ -17,7 +17,7 @@ dark_tile(:,:,1) = dark_r;
 dark_tile(:,:,2) = dark_g;
 dark_tile(:,:,3) = dark_b;
 
-% light green tile
+% light tile
 light_tile = zeros(100,100,3);
 light_r = 0.5765;
 light_g = 0.8745;
@@ -39,8 +39,10 @@ cross_two_b = 0;
 % this defaults to one of the crosses at the intersections to red: modify
 % the color to explore!
 
-cross_length = 20; %half of the full length of the cross symbols in the intersections
-cross_thick = 6; %thickness of the cross symbols in the intersections
+cross_length = 20; 
+% half of the full length of the cross symbols in the intersections
+cross_thick = 6; 
+% thickness of the cross symbols in the intersections
 %% Haley - started making the squares, Shirley - finished the squares
 % design pattern for first type of square (white top left and bot right,
 % red bot left and top right)
@@ -321,13 +323,13 @@ corner_one_square(cross_thick+1:end-cross_thick-1, cross_thick+1:end-cross_thick
 corner_two_square = [light_tile]; 
 % red bottom left tile
 % bottom left box
-corner_red_square(end-cross_length+1:end, 1:cross_length,1) = cross_two_r;
-corner_red_square(end-cross_length+1:end, 1:cross_length,2) = cross_two_g;
-corner_red_square(end-cross_length+1:end, 1:cross_length,3) = cross_two_b;
+corner_two_square(end-cross_length+1:end, 1:cross_length,1) = cross_two_r;
+corner_two_square(end-cross_length+1:end, 1:cross_length,2) = cross_two_g;
+corner_two_square(end-cross_length+1:end, 1:cross_length,3) = cross_two_b;
 % flooding the center back to light green
-corner_red_square(cross_thick+1:end-cross_thick-1, cross_thick+1:end-cross_thick-1, 1) = light_r;
-corner_red_square(cross_thick+1:end-cross_thick-1, cross_thick+1:end-cross_thick-1, 2) = light_g;
-corner_red_square(cross_thick+1:end-cross_thick-1, cross_thick+1:end-cross_thick-1, 3) = light_b;
+corner_two_square(cross_thick+1:end-cross_thick-1, cross_thick+1:end-cross_thick-1, 1) = light_r;
+corner_two_square(cross_thick+1:end-cross_thick-1, cross_thick+1:end-cross_thick-1, 2) = light_g;
+corner_two_square(cross_thick+1:end-cross_thick-1, cross_thick+1:end-cross_thick-1, 3) = light_b;
 % imshow(corner_two_square)
 
 %% top row without corner squares
@@ -414,7 +416,7 @@ top_border = top_row_full(1:100, 1:1500,:);
 right_flip = imrotate(top_border, 90);
 % rotate top_border 90 degrees
 right_border = fliplr(right_flip);
-full_right_border = [corner_red_square; right_border; 
+full_right_border = [corner_two_square; right_border; 
                     imrotate(corner_one_square, 180)];
 % add first and last tiles to right_border
 % imshow(full_right_border);
